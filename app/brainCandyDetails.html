@@ -1,0 +1,12 @@
+<div>
+    <form name="candyForm" ng-submit="candyForm.$valid && brainDetail.saveCandy()">
+        <label for="name" class="control-label">Brain candy name</label>
+        <input type="text" id="name" class="form-control" ng-model="brainDetail.details.name" required ng-minlength="1">
+
+        <label for="author" class="control-label">Author</label>
+        <input type="text" id="author" class="form-control" ng-model="brainDetail.details.author" required ng-minlength="1">
+
+        <input type="submit" id="saveButton" value="Save" class="btn btn-success">
+        <button role="button" id="backButton" ng-click="brainDetail.back()" class="btn btn-warning">Back</button>
+    </form>
+</div>

@@ -3,11 +3,27 @@
     'use strict';
     var module = angular.module('app', ['ngResource', 'ngRoute']);
 
-    module.config(function ($provide)
+    module.config(function ($provide,$routeProvider)
     {
         $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);
 
         //add routing here
+        $routeProvider
+                .when('/', {
+                    templateUrl: 'brainCandyList.html',
+                    controller: 'BrainCandyListCtrl',
+                    controllerAs: 'brainListCtrl'
+                })
+                .when('/details/:id',{
+                    templateUrl: 'brainCandyDetails.html',
+                    controller: 'BrainCandyDetailsCtrl',
+                    controllerAs: 'brainDetail'
+                })
+                .when('/save',{
+                    templateUrl: 'brainCandyDetails.html',
+                    controller: 'BrainCandyDetailsCtrl',
+                    controllerAs: 'brainDetail'
+                });
 
     });
 

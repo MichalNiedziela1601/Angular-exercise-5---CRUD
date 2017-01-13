@@ -1,0 +1,17 @@
+<table id="brainCandiesTable" class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="brainCandies in brainListCtrl.brainCandies">
+        <td>{{brainCandies.id}}</td>
+        <td>{{brainCandies.name}}</td>
+        <td><a ng-href="#/details/{{brainCandies.id}}"><button role="button" id="editButton" class="btn btn-info">Edit</button> </a></td>
+        <td><button role="button" id="deleteButton" class="btn btn-danger" ng-click="brainListCtrl.deleteCandy(brainCandies.id)">Delete</button></td>
+    </tr>
+    </tbody>
+</table>
+<a ng-href="#/save"><button id="addButton" class="btn btn-primary">Add</button> </a>
